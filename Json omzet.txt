@@ -1,0 +1,14 @@
+[
+    {
+        "maand":"",
+        "weeknummer":"",
+        "dag":"30-03-2021",
+        "omzet":""    
+    },
+    {
+        "maand":"",
+        "weeknummer":"",
+        "dag":"31-03-2021",
+        "omzet":""
+    }
+]
