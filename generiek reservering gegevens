@@ -1,59 +1,67 @@
-reservation1 = {
-	"total_people":"2",
-	"state":"possible",
-	"tijd":"1900",
-	"date":"09-04-2021",
-	"table":"3",
-	"code":"89967",
-	"fixed_menu":"yes"
-};
+[
+	{
+		"reservationnumber":1,
+		"total_people":2,
+		"state":"possible",
+		"time":1900,
+		"date":"09-04-2021",
+		"table":3,
+		"code":89967,
+		"fixed_menu":"yes"
+	};
 
-reservation2 = {
-	"total_people":"3",
-	"state":"impossible",
-	"tijd":"1400",
-	"date":"14-04-2021",
-	"table":"6",
-	"code":"86642",
-	"fixed_menu":"no"
-};
+	{
+		"reservationnumber":2,
+		"total_people":3,
+		"state":"impossible",
+		"time":1400,
+		"date":"14-04-2021",
+		"table":6,
+		"code":86642,
+		"fixed_menu":"no"
+	};
 
-reservation3 = {
-	"total_people":"",
-	"state":"",
-	"tijd":"",
-	"date":"",
-	"table":"",
-	"code":"",
-	"fixed_menu":""
-};
+	{
+		"reservationnumber":3,
+		"total_people":,
+		"state":"",
+		"time":,
+		"date":"",
+		"table":,
+		"code":,
+		"fixed_menu":""
+	};
 
-reservation4 = {
-	"total_people":"",
-	"state":"",
-	"tijd":"",
-	"date":"",
-	"table":"",
-	"code":"",
-	"fixed_menu":""
-};
+	{
+		"reservationnumber":4,
+		"total_people":,
+		"state":"",
+		"tijd":,
+		"date":"",
+		"table":,
+		"code":,
+		"fixed_menu":""
+	};
 
-reservation5 = {
-	"total_people":"",
-	"state":"",
-	"tijd":"",
-	"date":"",
-	"table":"",
-	"code":"",
-	"fixed_menu":""
-};
+	{
+		"reservationnumber":5,
+		"total_people":,
+		"state":"",
+		"tijd":,
+		"date":"",
+		"table":,
+		"code":,
+		"fixed_menu":""
+	};
 
-reservation6 = {
-	"total_people":"",
-	"state":"",
-	"tijd":"",
-	"date":"",
-	"table":"",
-	"code":"",
-	"fixed_menu":""
-};
+	{
+		"reservationnumber":6,
+		"total_people":,
+		"state":"",
+		"tijd":,
+		"date":"",
+		"table":,
+		"code":,
+		"fixed_menu":""
+	}
+]
