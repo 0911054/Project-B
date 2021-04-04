@@ -1,14 +1,14 @@
 [
     {
-        "maand":"",
-        "weeknummer":"",
-        "dag":"30-03-2021",
-        "omzet":""    
+        "month":"",
+        "weeknumber":,
+        "day":"30-03-2021",
+        "money_made":""    
     },
     {
-        "maand":"",
-        "weeknummer":"",
-        "dag":"31-03-2021",
-        "omzet":""
+        "month":"",
+        "weeknumber":,
+        "day":"31-03-2021",
+        "money_made":""
     }
 ]
