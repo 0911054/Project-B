@@ -167,7 +167,7 @@ public static void startscreen()
         
         public static void shutDown()
         {
-            //This function logs the user automatically out
+            //This function logs out the user
             if (Login.checkEmployeeLogin())
             {
                 string login = "";
