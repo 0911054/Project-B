@@ -1,4 +1,29 @@
-startscreen()
+using System;
+
+namespace restaurant
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.BackgroundColor = ConsoleColor.Black;
+            startScreen();
+
+            begin:
+
+            if (Login.checkEmployeeLogin())
+            {
+                Console.WriteLine($"\nWelcome Employee");
+                employeeUser();
+            }
+
+            else
+            {
+                customer();
+                goto begin;
+            } 
+        }
+public static void startscreen()
 {
     Console.ForegroundColor = ConsoleColor.Yellow
     var arr = new[]
@@ -11,5 +36,186 @@ startscreen()
                               @"*        \__/\__/  \____>|____/ \____>\____/|__|_|__/\____>   |__|  \____/   \_____/ \____>/______\__| /______>     *", 
                               @"*********************************************************************************************************************",
             };
+    Console.WriteLine("\n\n");
+    foreach(string line in arr )
+    Console.WriteLine(line);
+}
+{
+            //This function executes the part of the program for the customers
+            string customerAction = "";
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("\nMain menu\n");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("\nTo open the menu press M\n");
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.WriteLine("\nTo make a reservation press R\n");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("\nTo close the program press Q\n");
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            customerAction = Console.ReadLine();
 
+            Console.Clear();
+
+            switch (customerAction)
+            {
+                case "M": case "m":
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Menu.ViewMenu();
+                    goto startCustomer;
+                case "R": case "r":
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                    Reservation.AddReservation();
+                    goto startCustomer;
+                case "Q": case "q":
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                    shutDown();
+                    break;
+                default:
+                    Console.WriteLine("Unknown command.");
+                    goto startCustomer;
+            }
+        }
+
+        public static void employeeUser()
+        {
+            //This function executes the part of the program for the employee
+            string employeeAction = "";
+
+            startEmployee:
+
+            Console.WriteLine("\nM: manage menu\n\nT: manage tables\n\nR: manage reservations\n\nQ: logout and/or close the program\n\n");
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            employeeAction = Console.ReadLine();
+
+            Console.Clear();
+
+            switch (employeeAction)
+            {
+                case "M": case "m":
+                    employeeMenu:
+                    
+                    Console.WriteLine("\nA: add a dish\nV: view all dishes\nE: edit a dish\nD: delete a dish\n");
+                    employeeAction = Console.ReadLine();
+
+                    switch (employeeAction)
+                    {
+                        case "A": case "a":
+                            Dish.addDish();
+                            goto startEmployee;
+                        case "V": case "v":
+                            Dish.viewDish();
+                            goto startEmployee;
+                        case "E": case "e":
+                            Dish.editDish();
+                            goto startEmployee;
+                        case "D": case "d":
+                            Dish.deleteDish();
+                            goto startEmployee;
+                        default:
+                            Console.WriteLine("Unknown command.");
+                            goto employeeMovie;
+                    }
+                case "T": case "t":
+                    employeeTables:
+
+                    Console.WriteLine("\nA: add a table\nV: view all tables\nE: edit a table\nD: delete a table\n");
+                    employeeAction = Console.ReadLine();
+
+                    Console.Clear();
+
+                    switch (employeeAction)
+                    {
+                        case "A": case "a":
+                            Table.addTable();
+                            goto startEmployee;
+                        case "V": case "v":
+                            Table.viewTable();
+                            goto startEmployee;
+                        case "E": case "e":
+                            Table.editTable();
+                            goto startEmployee;
+                        case "D": case "d":
+                            Table.deleteTable();
+                            goto startEmployee;
+                        default:
+                            Console.WriteLine("Unknown command.");
+                            goto employeeRoom;
+                    }
+                case "R": case "r":
+                    reservationEmployee:
+
+                    Console.WriteLine("A: add a reservation");
+                    employeeAction = Console.ReadLine();
+
+                    switch (employeeAction)
+                    {
+                        case "A": case "a":
+                            Reservation.AddReservation();
+                            goto startEmployee;
+                        default:
+                            Console.WriteLine("Unknown command.");
+                            goto reservationEmployee;
+                    }
+                case "Q": case "q":
+                    shutDown();
+                    break;
+                default:
+                    Console.WriteLine("Unknown command.");
+                    goto startEmployee;
+            }
+        }
+        
+        public static void shutDown()
+        {
+            //This function logs the user automatically out
+            if (Login.checkEmployeeLogin())
+            {
+                string login = "";
+
+                signIn:
+                Console.WriteLine("\nDo you want to shut down the system? Yes: Y or NO: N\n\nIf you only want to sign out enter N\n");
+                login = Console.ReadLine();
+
+                Console.Clear();
+
+                if(login == "Y" || login == "y")
+                {
+                    Console.WriteLine("\nDo you want to stay signed in? Yes: Y or NO: N");
+                    login = Console.ReadLine();
+
+                    if(login == "Y" || login == "y")
+                    {
+                        Console.WriteLine("See you next time");
+                        Environment.Exit(0);
+                    }
+
+                    else
+                    {
+                        Login.logOut();
+                        Console.WriteLine("Successfully logged out\nWe hope to see you again");
+                        Environment.Exit(0);
+                    }
+                }
+
+                if(login == "N" || login == "n")
+                {
+                    Login.logOut();
+                    Console.Clear();
+                    Program.Main();
+                }
+
+                else
+                {
+                    Console.WriteLine("Unknown command.");
+                    goto signIn;
+                }
+            }
+
+            else
+            {
+                Console.WriteLine("We hope to see you again");
+                Environment.Exit(0);
+            }
+        }
+    }         
 }
