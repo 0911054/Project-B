@@ -1,0 +1,20 @@
+[
+	{
+		"menu item number":1,
+		"foodstuff":"dish name",
+		"price":3,
+		"type of dish" : "appetizer"
+	},
+	{
+		"menu item number":2,
+		"foodstuf":"dish name",
+		"price":8,
+		"type of dish" : "main"
+	},
+	{
+		"menu item number":3,
+		"foodstuf":"dish name",
+		"price":2,
+		"type of dish" : "dessert",
+	}
+]
