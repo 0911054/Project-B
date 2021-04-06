@@ -15,6 +15,6 @@
 		"menu item number":3,
 		"foodstuf":"dish name",
 		"price":2,
-		"type of dish" : "dessert",
+		"type of dish" : "dessert"
 	}
 ]
