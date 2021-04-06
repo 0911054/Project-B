@@ -16,5 +16,11 @@
 		"foodstuf":"dish name",
 		"price":2,
 		"type of dish" : "dessert"
-	}
+	},
+	{
+		"menu item number":4,
+		"foodstuf":"drink name",
+		"price":1,
+		"type of dish" : "beverage"
+	}	
 ]
