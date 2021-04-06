@@ -3,28 +3,35 @@
 		"menu item number":1,
 		"foodstuff":"dish name",
 		"price":3,
-		"type of dish" : "appetizer",
-		"vegan option" : "yes"
+		"type of dish":"appetizer",
+		"vegan option":"yes"
 	},
 	{
 		"menu item number":2,
 		"foodstuf":"dish name",
 		"price":8,
-		"type of dish" : "main",
-		"vegan option" : "yes"
+		"type of dish":"main",
+		"vegan option":"yes"
 	},
 	{
 		"menu item number":3,
-		"foodstuf":"dish name"
+		"foodstuf":"dish name",
 		"price":2,
-		"type of dish" : "dessert",
-		"vegan option" : "yes"
+		"type of dish":"dessert",
+		"vegan option":"yes"
 	},
 	{
 		"menu item number":4,
 		"foodstuf":"drink name",
 		"price":1,
-		"type of dish" : "beverage",
-		"alcohol" : "no" 
-	}	
+		"type of dish":"beverage",
+		"alcohol":"no" 
+	},	
+	{
+		"menu item number":0,
+		"foodstuf": null,
+		"price":0,
+		"type of dish" : null,
+		"alcohol" : null 
+	}
 ]
